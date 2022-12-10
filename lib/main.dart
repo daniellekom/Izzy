@@ -66,7 +66,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
        backgroundColor: Colors.lightGreenAccent,
-        title:  Center(child: Text("!izzy!",style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 2.85, color: Colors.pink.shade200,fontSize: 30,fontWeight: FontWeight.bold,),)),
+        title:  Center(child: Text("!izzy!",style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 2.95, color: Colors.pink.shade200,fontSize: 30,fontWeight: FontWeight.bold,),)),
       ),
       body: Column(
         children: [
