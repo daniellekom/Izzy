@@ -20,8 +20,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class GoogleFonts {
-}
+class GoogleFonts {}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -65,12 +64,24 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
       appBar: AppBar(
-       backgroundColor: Colors.lightGreenAccent,
-        title:  Center(child: Text("!izzy!",style: TextStyle(decoration:TextDecoration.lineThrough,decorationThickness: 2.95, color: Colors.pink.shade200,fontSize: 30,fontWeight: FontWeight.bold,),)),
+        backgroundColor: Colors.lightGreenAccent,
+        title: Center(
+            child: Text(
+          "izzy!",
+          style: TextStyle(
+            decoration: TextDecoration.lineThrough,
+            decorationThickness: 2.00,
+            color: Colors.pink.shade200,
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
+          ),
+        )),
       ),
       body: Column(
         children: [
-          Image.asset('assets/images/pooh.jpeg'),
+          const Card(color: Colors.orange,shape: CircleBorder(side: BorderSide(color: Colors.green))),
+          SizedBox(height: 100,width: 200, ),
+          Image.asset('images/firstpic.png', height: 100),
         ],
       ),
       floatingActionButton: FloatingActionButton(
