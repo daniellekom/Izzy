@@ -77,11 +77,40 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         )),
       ),
-      body: Column(
+      body: Row(
         children: [
-          const Card(color: Colors.orange,shape: CircleBorder(side: BorderSide(color: Colors.green))),
-          SizedBox(height: 100,width: 200, ),
-          Image.asset('images/firstpic.png', height: 100),
+          Flexible(
+            child: Row(
+              children: [
+                Column(
+                  children: [
+                    Text("First Name"),
+                    SizedBox(width: 150,
+                      child: TextField(
+                          decoration:
+                              InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)))),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+          Flexible(
+            child: Row(
+              children: [
+                Column(
+                  children: [
+                    Text("Last Name"),
+                    SizedBox(width: 150,
+                      child: TextField(
+                          decoration:
+                              InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)))),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
