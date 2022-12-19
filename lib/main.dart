@@ -81,6 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           Flexible(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
                   children: [
@@ -97,6 +98,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Flexible(
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Column(
                   children: [
@@ -113,11 +115,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
+    // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
