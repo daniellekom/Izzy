@@ -69,23 +69,35 @@ class _MyHomePageState extends State<MyHomePage> {
           elevation: 0,
         ),
         body: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(120.0),
-            child: Column( mainAxisAlignment: MainAxisAlignment.end,
-                children:  [
-              const Text("Welcome to",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900)),
-              const Text("Express Yourself",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900)),
-                  OutlinedButton(onPressed: (){
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
+          child: Column(children: [
+            Image.network(
+                "https://images.urbndata.com/is/image/UrbanOutfitters/61404398_001_b?&fit=constrain&fmt=webp&qlt=80&wid=1080",
+                fit:BoxFit.fitWidth),
+            Column(
+              children: [
+                OutlinedButton(
+                  onPressed: () {
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
                       return const ScreenOne();
                     }));
-                  }, child: const Text("Get Started!"))
-            ]),
-          ),
+                  },
+                  style: OutlinedButton.styleFrom(backgroundColor: Colors.black),
+                  child: const Text(
+                    textAlign: TextAlign.center,
+                    "SHOP NOW",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 30,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ]),
         )
 
-        // This trailing comma makes auto-formatting nicer for build methods.
-        );
+      // This trailing comma makes auto-formatting nicer for build methods.
+    );
   }
 }
 
