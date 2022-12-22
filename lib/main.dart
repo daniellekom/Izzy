@@ -68,35 +68,42 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return Scaffold(
         body: Stack(children: [
-          Image.network(fit: BoxFit.fill,width: window.physicalSize.width,height: window.physicalSize.height,
-            "https://images.urbndata.com/is/image/UrbanOutfitters/69191955_030_b?&fit=constrain&fmt=webp&qlt=80&wid=1080",
-          ),
-          Padding(
-            padding: const EdgeInsets.all(50.0),
-            child: Center(
-              child: Column(mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  OutlinedButton(
-                    onPressed: () {
-                      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                        return const ScreenOne();
-                      }));
-                    },
-                    style: OutlinedButton.styleFrom(backgroundColor: Colors.black),
-                    child: const Text(
-                      textAlign: TextAlign.center,
-                      "SHOP NOW",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 35,
-                      ),
-                    ),
+      Image.network(
+        fit: BoxFit.fill,
+        width: window.physicalSize.width,
+        height: window.physicalSize.height,
+        "https://images.urbndata.com/is/image/UrbanOutfitters/69191955_030_b?&fit=constrain&fmt=webp&qlt=80&wid=1080",
+      ),
+      Padding(
+        padding: const EdgeInsets.all(50.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              OutlinedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                    return const ScreenOne();
+                  }));
+                },
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.black,
+                    padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
+                    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
+                child: const Text(
+                  textAlign: TextAlign.center,
+                  "SHOP NOW",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 35,
                   ),
-                ],
+                ),
               ),
-            ),
-          )
-        ])
+            ],
+          ),
+        ),
+      )
+    ])
 
         // This trailing comma makes auto-formatting nicer for build methods.
         );
