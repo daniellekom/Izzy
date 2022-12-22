@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:golden_hour/screen_one.dart';
@@ -65,39 +67,39 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-        ),
-        body: Center(
-          child: Column(children: [
-            Image.network(
-                "https://images.urbndata.com/is/image/UrbanOutfitters/61404398_001_b?&fit=constrain&fmt=webp&qlt=80&wid=1080",
-                fit:BoxFit.fitWidth),
-            Column(
-              children: [
-                OutlinedButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) {
-                      return const ScreenOne();
-                    }));
-                  },
-                  style: OutlinedButton.styleFrom(backgroundColor: Colors.black),
-                  child: const Text(
-                    textAlign: TextAlign.center,
-                    "SHOP NOW",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 30,
+        body: Stack(children: [
+          Image.network(fit: BoxFit.fill,width: window.physicalSize.width,height: window.physicalSize.height,
+            "https://images.urbndata.com/is/image/UrbanOutfitters/69191955_030_b?&fit=constrain&fmt=webp&qlt=80&wid=1080",
+          ),
+          Padding(
+            padding: const EdgeInsets.all(50.0),
+            child: Center(
+              child: Column(mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  OutlinedButton(
+                    onPressed: () {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                        return const ScreenOne();
+                      }));
+                    },
+                    style: OutlinedButton.styleFrom(backgroundColor: Colors.black),
+                    child: const Text(
+                      textAlign: TextAlign.center,
+                      "SHOP NOW",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ]),
-        )
+          )
+        ])
 
-      // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
 
