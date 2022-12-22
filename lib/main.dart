@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:golden_hour/screen_one.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,8 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        backgroundColor: Colors.yellow,
-      ),
+          scaffoldBackgroundColor: Colors.deepPurple.shade400,
+          appBarTheme: AppBarTheme(backgroundColor: Colors.deepPurple.shade400)),
       home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
@@ -63,59 +65,33 @@ class _MyHomePageState extends State<MyHomePage> {
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.lightGreenAccent,
-        title: Center(
-            child: Text(
-          "izzy!",
-          style: TextStyle(
-            decoration: TextDecoration.lineThrough,
-            decorationThickness: 2.00,
-            color: Colors.pink.shade200,
-            fontSize: 30,
-            fontWeight: FontWeight.bold,
+        appBar: AppBar(
+          elevation: 0,
+        ),
+        body: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(120.0),
+            child: Column( mainAxisAlignment: MainAxisAlignment.end,
+                children:  [
+              const Text("Welcome to",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900)),
+              const Text("Express Yourself",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w900)),
+                  OutlinedButton(onPressed: (){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context){
+                      return const ScreenOne();
+                    }));
+                  }, child: const Text("Get Started!"))
+            ]),
           ),
-        )),
-      ),
-      body: Row(
-        children: [
-          Flexible(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Text("First Name"),
-                    SizedBox(width: 150,
-                      child: TextField(
-                          decoration:
-                              InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)))),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Flexible(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    Text("Last Name"),
-                    SizedBox(width: 150,
-                      child: TextField(
-                          decoration:
-                              InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)))),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
-    // This trailing comma makes auto-formatting nicer for build methods.
-    );
+        )
+
+        // This trailing comma makes auto-formatting nicer for build methods.
+        );
   }
 }
+
+// OutlinedButton(onPressed: (){
+//             Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+//               return NewScreen();
+//             },));
+//           }, child: Text("navigate"))
+// }
