@@ -1,17 +1,17 @@
 import 'dart:ui';
-
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:golden_hour/screen_one.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -23,8 +23,6 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-class GoogleFonts {}
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key, required this.title});
@@ -49,23 +47,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
   void _incrementCounter() {
     setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
       _counter++;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
         body: Stack(children: [
       Image.network(
@@ -74,9 +61,18 @@ class _MyHomePageState extends State<MyHomePage> {
         height: window.physicalSize.height,
         "https://images.urbndata.com/is/image/UrbanOutfitters/69191955_030_b?&fit=constrain&fmt=webp&qlt=80&wid=1080",
       ),
-      Padding(
-        padding: const EdgeInsets.all(50.0),
-        child: Center(
+      Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50.0,),
+          child: Text(
+            'Gifts for the Holidays',
+            style: GoogleFonts.londrinaOutline(fontSize: 50, color: Colors.red, fontWeight: FontWeight.bold),
+          ),
+        ),
+      ),
+      Center(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 330.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
@@ -87,14 +83,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   }));
                 },
                 style: OutlinedButton.styleFrom(
-                    backgroundColor: Colors.black,
-                    padding: const EdgeInsets.symmetric(horizontal: 48, vertical: 16),
+                    backgroundColor: Colors.white,
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
                 child: const Text(
                   textAlign: TextAlign.center,
                   "SHOP NOW",
                   style: TextStyle(
-                    color: Colors.white,
+                    color: Colors.red,
                     fontSize: 35,
                   ),
                 ),
@@ -102,7 +97,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ],
           ),
         ),
-      )
+      ),
     ])
 
         // This trailing comma makes auto-formatting nicer for build methods.
