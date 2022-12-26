@@ -12,7 +12,18 @@ class Pixel{
 
  Pixel(this.red,this.green,this.blue);
 
- int boolIsRed(int value){
-  return red + value;
+ int isRed(){
+  return red;
  }
+ int isGreen(){
+  return green;
+ }
+ int isBlue(){
+  return blue;
+ }
+ int isBlack() {
+  return isBlack();
+ }
+
+
 }
