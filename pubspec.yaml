@@ -39,7 +39,7 @@ dependencies:
   cupertino_icons: 1.0.2
   seo: 0.0.1
   google_fonts: 3.0.1
-
+  stacked: 3.0.1
 
 
 dev_dependencies:

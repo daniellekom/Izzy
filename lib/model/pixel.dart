@@ -49,6 +49,7 @@ class Pixel {
   }
 }
 
+//Create instance!!
 void main() {
   Pixel pixel1 = Pixel(9, 0, 0);
   print('is red : ${pixel1.isRed()}');
