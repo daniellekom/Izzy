@@ -5,16 +5,14 @@
 // 4. what is the function doing?
 
 
-
-
 class Pixel{
-int color;
+ int red;
+ int green;
+ int blue;
 
-Pixel(this.color);
+ Pixel(this.red,this.green,this.blue);
 
- void Colors(){
-  var color1 = color;
+ int boolIsRed(int value){
+  return red + value;
  }
-
-
 }
